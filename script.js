@@ -2,17 +2,23 @@ var currentQuestion = 0
 var questions = [
   "Commonly used data types DO NOT include",
   "The condition in an if/else statement is enclosed within _____.",
-  "Arrays in Javascript can be used to store ____."
+  "Arrays in Javascript can be used to store ____.",
+  "String values must be enclosed within ____ when being assigned to variables",
+  "A very useful tool used during development and debugging for printing content to the debugger is:"
 ];
 var allChoices = [
   ["Strings", "Booleans", "Alerts", "Numbers"],
   ["Quotes", "Curly Brackets", "Parentheses", "Square Brackets"],
-  ["numbers and strings", "other arrays", "booleans", "all of the above"]
+  ["numbers and strings", "other arrays", "booleans", "all of the above"],
+  ["Commas", "curly brackets", "Quotes", "parentheses"],
+  ["Javascript", "Terminal/Bash", "for loops", "console.log"]
 ];
 const answers = [
-  "Booleans",
+  "Alerts",
   "Parentheses",
-  "all of the above"
+  "all of the above",
+  "Quotes",
+  "console.log"
 ];
 const startQuiz = document.getElementById("startQuiz");
 const choicesList = document.getElementById("choicesList");
