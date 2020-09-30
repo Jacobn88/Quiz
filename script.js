@@ -20,7 +20,24 @@ const answers = [
   "Quotes",
   "console.log"
 ];
-const startQuiz = document.getElementById("startQuiz");
+var timeEl = document.querySelector(".time");;
+var secondsLeft = 30;
+
+function setTime() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft
+    
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      alert("Out of time!");
+    }
+
+  }, 1000);
+}
+
+
+    const startQuiz = document.getElementById("startQuiz");
 const choicesList = document.getElementById("choicesList");
 const questionSpan = document.getElementById("questionSpan");
 // questionsDiv starts hidden
@@ -28,9 +45,10 @@ toggleDiv("questionsDiv")
 // when user clicks the start button startDiv is questionsDiv is shown
 startQuiz.addEventListener("click", function () {
   toggleDiv("startDiv");
-  toggleDiv("questionsDiv")
+  toggleDiv("questionsDiv");
   currentQuestion = 0;
   renderQuestion(currentQuestion);
+  setTime();
 });
 
 function renderQuestion(index) {
